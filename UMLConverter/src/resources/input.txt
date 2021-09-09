@@ -1,0 +1,8 @@
+Person
+- age: int
+- height: int
+- prime: boolean
++ Person(age: int, height: int, prime: boolean)
++ getAge(): int
++ getHeight(): int
++ isPrime(): boolean

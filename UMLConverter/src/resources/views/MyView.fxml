@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="420.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu fx:id="menuFile" mnemonicParsing="false" text="%menu.file">
+               <items>
+                  <MenuItem fx:id="menuNew" mnemonicParsing="false" onAction="#newFile" text="%menu.new">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/New.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuOpen" mnemonicParsing="false" onAction="#open" text="%menu.open">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Open.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <Menu fx:id="menuOpenRecent" mnemonicParsing="false" text="%menu.openRecent">
+                     <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuClearHistory" disable="true" mnemonicParsing="false" onAction="#clearHistory" text="%menu.clearHistory">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/Trash.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuClose" mnemonicParsing="false" text="%menu.close">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Suppr.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#save" text="%menu.save">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuSaveAs" mnemonicParsing="false" onAction="#saveAs" text="%menu.saveAs">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/SaveAs.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuRevert" mnemonicParsing="false" text="%menu.revert">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Undo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuExportAs" mnemonicParsing="false" onAction="#exportAs" text="%menu.exportAs">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/ExportAs.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuPrint" mnemonicParsing="false" onAction="#print" text="%menu.print">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Print.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuPreferences" mnemonicParsing="false" onAction="#preferences" text="%menu.preferences">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Settings.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuQuit" mnemonicParsing="false" onAction="#quit" text="%menu.quit">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Quit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu fx:id="menuEdit" mnemonicParsing="false" text="%menu.edit">
+               <items>
+                  <MenuItem fx:id="menuUndo" mnemonicParsing="false" text="%menu.undo">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Undo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuRedo" mnemonicParsing="false" text="%menu.redo">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Redo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuCut" mnemonicParsing="false" onAction="#cut" text="%menu.cut">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Cut.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuCopy" mnemonicParsing="false" onAction="#copy" text="%menu.copy">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Copy.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuPaste" mnemonicParsing="false" onAction="#paste" text="%menu.paste">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Paste.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuDelete" mnemonicParsing="false" onAction="#suppr" text="%menu.delete">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Suppr.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuSelectAll" mnemonicParsing="false" onAction="#selectAll" text="%menu.selectAll">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/SelectAll.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuUnselectAll" mnemonicParsing="false" onAction="#unSelectAll" text="%menu.unselectAll">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/UnSelectAll.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu fx:id="menuWindow" mnemonicParsing="false" text="%menu.window">
+               <items>
+                  <MenuItem fx:id="menuFullScreen" mnemonicParsing="false" onAction="#fullScreen" text="%menu.fullScreen">
+                     <graphic>
+                        <ImageView fx:id="imageViewFullScreen" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/FullScreen.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <Menu fx:id="menuLanguages" mnemonicParsing="false" text="%menu.languages">
+                     <items>
+                        <MenuItem fx:id="menuEnglish" mnemonicParsing="false" onAction="#switchLanguageEN" text="%menu.english">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/EnglishFlag.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="menuFrench" mnemonicParsing="false" onAction="#switchLanguageFR" text="%menu.french">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/FrenchFlag.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="menuSpanish" mnemonicParsing="false" onAction="#switchLanguageES" text="%menu.spanish">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/SpanishFlag.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="menuItaly" mnemonicParsing="false" onAction="#switchLanguageIT" text="%menu.italy">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/ItalyFlag.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="menuGerman" mnemonicParsing="false" onAction="#switchLanguageDE" text="%menu.german">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/GermanFlag.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Earth.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu fx:id="menuHelp" mnemonicParsing="false" text="%menu.help">
+               <items>
+                  <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#about" text="%menu.about">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Hint.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <Button fx:id="btnConvert" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#convert" styleClass="btn-green" text="%btn.convert" textAlignment="CENTER" />
+            <Button fx:id="btnFastCopy" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fastCopy" styleClass="btn-blue" text="%btn.fastCopy" textAlignment="CENTER" />
+        </items>
+      </ToolBar>
+   </bottom>
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <TextArea fx:id="textAreaIn" prefHeight="200.0" prefWidth="200.0" />
+            <TextArea fx:id="textAreaOut" prefHeight="200.0" prefWidth="200.0" />
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>

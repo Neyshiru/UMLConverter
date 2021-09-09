@@ -1,0 +1,27 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.button {
+	-fx-font-size: 12px;
+	-fx-font-weight: bolder;
+}
+.btn-green {
+	-fx-text-fill: #fff;
+	-fx-background-color: #28a745;
+}
+.btn-green:pressed {
+	-fx-background-color: #269840;
+}
+.btn-blue {
+	-fx-text-fill: #fff;
+	-fx-background-color: #007bff;
+}
+.btn-blue:pressed {
+	-fx-background-color: #0070f3;
+}
+.btn-red {
+	-fx-text-fill: #fff;
+	-fx-background-color: #dc3545;
+}
+.btn-red:pressed {
+	-fx-background-color: #ca2938;
+}
